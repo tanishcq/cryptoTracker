@@ -7,6 +7,7 @@ import EtherSvg from '../images/eth.svg';
 import AdaSvg from '../images/ada.svg';
 import DogeSvg from '../images/doge.svg';
 import './anime.css';
+import './login.js';
 
 const Section = styled.section`
     height: 100vh;
@@ -106,7 +107,7 @@ const anime = () => {
                 <ColumnnLeft>
                     <motion.h1 initial={{opacity:0}} animate={{opacity:1}} transition={{duration: 1}}>Welcome to <span id="logo1">crypto</span><span className="logo2">Rich</span></motion.h1>
                     <motion.p variants={fadeLeft} initial='hidden' animate='visible' transition={{duration: 2}}>Let's become <span className="logo2">rich</span> together</motion.p>
-                    <Button whileHover={{ scale: 1.05, backgroundColor: '#ac32e4'}} whileTap={{scale: 0.95, backgroundColor: '#4801ff', border: 'none', color: '#ffcc00'}} initial={{opacity:0}} animate={{opacity:1, transition: {duration: 2}}}>Become <span className="logo2">Rich</span></Button>
+                    <Button href="#reg-lock" whileHover={{ scale: 1.05, backgroundColor: '#ac32e4'}} whileTap={{scale: 0.95, backgroundColor: '#4801ff', border: 'none', color: '#ffcc00'}} initial={{opacity:0}} animate={{opacity:1, transition: {duration: 2}}}>Become <span className="logo2">Rich</span></Button>
                 </ColumnnLeft>
                 <ColumnnRight>
                     <Image src={BitcoinSvg} alt='coin' 

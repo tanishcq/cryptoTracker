@@ -4,6 +4,7 @@ import './login.css'
 const login = () => {
     return (
         <>
+        <script scr="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"></script>
             <div class="section">
                 <div class="container">
                     <div class="row full-height justify-content-center">
@@ -60,7 +61,7 @@ const login = () => {
                     </div>
                 </div>
 	        </div>
-            <script scr="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css"></script>
+            
         </>
     )
 }
