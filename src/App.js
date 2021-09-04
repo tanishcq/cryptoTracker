@@ -32,6 +32,7 @@ function App() {
         <h2 class="navbar-brand ms-auto me-auto"><span id="navbar-text-1">crypto</span><span id="navbar-text-2">RICH</span></h2>
         </div>
       </nav>
+      <Anime/>
     </div>
     
     <div className="coin-app">

@@ -1,0 +1,138 @@
+import React from 'react'
+import styled from 'styled-components';
+import {motion} from 'framer-motion';
+import BitcoinSvg from '../images/bit.svg';
+import EtherSvg from '../images/eth.svg';
+import AdaSvg from '../images/ada.svg';
+import DogeSvg from '../images/doge.svg';
+
+const Section = styled.section`
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #070707;
+    width: 100%;
+`;
+
+const Container = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    padding: 3rem calc((100vw - 1300px) / 2);
+
+    @media screen and (max-width: 768px) {
+    grid-grid-template-columns: 1fr;
+    }
+`;
+
+const ColumnnLeft = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5rem 2rem;
+    
+    h1{
+        color: #ac32e4;
+        margin-bottom: 0.5rem;
+        font-size: 2rem;
+    }
+    
+    p{
+        margin: 2rem 0;
+        font-size: 4rem;
+        line-height: 1.1;
+    }
+`;
+
+const Button = styled(motion.button)`
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    border: 2px solid #ac32e4;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+`;
+
+const Image = styled(motion.img)`
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    max-width: 250px;
+    max-height: 250px;
+`;
+
+const ColumnnRight = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+
+    ${Image}:nth-child(1){
+        top: 10px;
+        left: 10px;
+    }
+    ${Image}:nth-child(2){
+        top: 170px;
+        right: 10px;
+    }
+    ${Image}:nth-child(3){
+        top: 350px;
+        left: 50px;
+    }
+    ${Image}:nth-child(4){
+        bottom: 100px;
+        right: 75px;
+    }
+`;
+
+const anime = () => {
+    const fadeLeft = {
+        hidden: {opacity: 0, x: -100},
+        partly: {opacity: 0.5, x: 20},
+        visible: {opacity: 1, x: 0}
+    }
+
+    return (
+        <Section>
+            <Container>
+                <ColumnnLeft>
+                    <motion.h1 initial={{opacity:0}} animate={{opacity:1}} transition={{duration: 1}}>Welcome to CryptoRich</motion.h1>
+                    <motion.p variants={fadeLeft} initial='hidden' animate='visible' transition={{duration: 2}}>Let's become rich together</motion.p>
+                    <Button whileHover={{ scale: 1.05, backgroundColor: '#ac32e4'}} whileTap={{scale: 0.95, backgroundColor: '#4801ff', border: 'none', color: '#ffcc00'}} initial={{opacity:0}} animate={{opacity:1, transition: {duration: 1.5}}}>Become Rich</Button>
+                </ColumnnLeft>
+                <ColumnnRight>
+                    <Image src={BitcoinSvg} alt='coin' 
+                    whileTap={{scale:0.9}}
+                    drag={true}
+                    initial={{opacity: 0, y: -100}}
+                    animate={{opacity: 1, y: 0, transition: {duration:1}}} />
+                    <Image src={EtherSvg} alt='coin'
+                    whileTap={{scale:0.9}}
+                    drag={true}
+                    initial={{opacity: 0, x: 100}}
+                    animate={{opacity: 1, x: 0, transition: {duration:1}}}
+                    />
+                    <Image src={AdaSvg} alt='coin'
+                    whileTap={{scale:0.9}}
+                    drag={true}
+                    initial={{opacity: 0, x: -100}}
+                    animate={{opacity: 1, x: 0, transition: {duration:1}}}
+                    />
+                    <Image src={DogeSvg} alt='coin' 
+                    whileTap={{scale:0.9}}
+                    drag={true}
+                    initial={{opacity: 0, y: 100}}
+                    animate={{opacity: 1, y: 0, transition: {duration:1}}}
+                    />
+                </ColumnnRight>
+            </Container>
+        </Section>
+    );
+};
+
+export default anime;
