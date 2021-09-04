@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Monoton&family=Montserrat:wght@100;400;600;700&display=swap');
+
+#logo1{
+    font-family: 'Major Mono Display', monospace;
+}
+
+.logo2{
+    background: transparent;
+    font-family: 'Monoton', cursive;
+}
+

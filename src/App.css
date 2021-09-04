@@ -9,7 +9,12 @@
   color: #fff;
 }
 
+nav{
+  box-shadow: 4px 4px 100px 0px#ac32e4;
+}
+
 .navbar{
+  padding: 0;
   background-image: linear-gradient(-225deg, #ac32e4 0%, #7918f2 48%, #4801ff 100%);
 }
 

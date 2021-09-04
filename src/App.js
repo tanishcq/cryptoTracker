@@ -4,6 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Coin from './Coin';
 import Anime from './components/anime'
+import Login from './components/login'
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -57,6 +58,10 @@ function App() {
           )
         })
       }
+    </div>
+
+    <div className="loginDiv">
+      <Login/>
     </div>
     </>
   );
