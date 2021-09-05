@@ -20,7 +20,7 @@ import DogeSvg from '../images/doge.svg';
 
 const scrollToBottom = () =>{ 
     window.scrollTo({ 
-      top: document.documentElement.scrollHeight - 1146, 
+      top: document.documentElement.scrollHeight - 1143, 
       behavior: 'auto'
     }); 
   }; 
