@@ -10,7 +10,7 @@
 }
 
 nav{
-  box-shadow: 4px 4px 100px 0px#ac32e4;
+  box-shadow: 0px 0px 200px 1px#ac32e4;
 }
 
 .navbar{
@@ -83,6 +83,27 @@ nav{
 
 .coin-input::placeholder{
   color: #e2e2e2;
+}
+
+.footer-text{
+  color: #ac32e4;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer{
+  text-align: center;
+}
+
+footer a{
+  background-color: #070707;
+}
+
+footer svg{
+  background-color: transparent;
+}
+
+footer button{
+  background-color: #070707;
 }
 
 @media (max-width: 996px){

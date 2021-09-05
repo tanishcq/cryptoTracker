@@ -16,7 +16,7 @@ a:hover { text-decoration: none; }
 
 .link { color: #fff; }
 
-.link:hover { color: #4801ff; }
+.link:hover { color: #7918f2; }
 
 p { font-weight: 500; font-size: 14px; line-height: 1.7; }
 
@@ -60,7 +60,7 @@ h6 span{
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    color: #4801ff;
+    color: #7918f2;
     background-color: #2a2b38;
     font-family: 'unicons';
     content: '\eb4f';
@@ -106,6 +106,7 @@ h6 span{
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     backface-visibility: hidden;
+    box-shadow: 0px 0px 400px 50px#ac32e4;
 }
 .card-back {
     transform: rotateY(180deg);
@@ -142,7 +143,7 @@ h6 span{
     letter-spacing: 0.5px;
     outline: none;
     color: #c4c3ca;
-    background-color: #4801ff;
+    background-color: #7918f2;
     border: none;
     transition: all 200ms linear;
     box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
@@ -219,18 +220,18 @@ h6 span{
     -ms-flex-pack: center;
     text-align: center;
     border: none;
-    background-color: #4801ff;
+    background-color: #7918f2;
     color: #fff;
 }
 .btn:active,
 .btn:focus{  
   background-color: #fff;
-  color: #4801ff;
+  color: #7918f2;
   box-shadow: 0 8px 24px 0 rgba(255,255,255,.2);
 }
 .btn:hover{  
   background-color: #fff;
-  color:#4801ff;
+  color:#7918f2;
   box-shadow: 0 8px 24px 0 rgba(255,255,255,.2);
 }
 .logo {
@@ -245,4 +246,10 @@ h6 span{
 	height: 26px;
 	width: auto;
 	display: block;
+}
+.dummyDiv{
+    width: 100%;
+    background-image: linear-gradient(-225deg, #ac32e4 0%, #7918f2 48%, #4801ff 100%);
+    height: 1rem;
+    box-shadow: 0px 0px 400px 50px#ac32e4;
 }
