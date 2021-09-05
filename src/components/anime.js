@@ -9,13 +9,13 @@ import BitcoinSvg from '../images/bit.svg';
 import EtherSvg from '../images/eth.svg';
 import AdaSvg from '../images/ada.svg';
 import DogeSvg from '../images/doge.svg';
-import UsdtSvg from '../images/usdt.svg'
-import XrpSvg from '../images/xrp.svg'
-import BnbSvg from '../images/bnb.svg'
-import EtcSvg from '../images/etc.svg'
-import ShibSvg from '../images/shib.svg'
-import UniSvg from '../images/uni.svg'
-import DotSvg from '../images/dot.svg'
+// import UsdtSvg from '../images/usdt.svg'
+// import XrpSvg from '../images/xrp.svg'
+// import BnbSvg from '../images/bnb.svg'
+// import EtcSvg from '../images/etc.svg'
+// import ShibSvg from '../images/shib.svg'
+// import UniSvg from '../images/uni.svg'
+// import DotSvg from '../images/dot.svg'
 
 
 const scrollToBottom = () =>{ 
@@ -84,14 +84,14 @@ const Image = styled(motion.img)`
     max-height: 250px;
 `;
 
-const IMAGE = styled(motion.img)`
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: transparent;
-    max-width: 100px;
-    max-height: 100px;
-`;
+// const IMAGE = styled(motion.img)`
+//     position: absolute;
+//     height: 100%;
+//     width: 100%;
+//     background: transparent;
+//     max-width: 100px;
+//     max-height: 100px;
+// `;
 
 const ColumnnRight = styled.div`
     display: flex;
