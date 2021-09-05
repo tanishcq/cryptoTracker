@@ -65,7 +65,7 @@ function App() {
       </div>
 
       <div className="">
-        <footer className="align-items-center py-3 my-4 border-top">
+        <footer className="align-items-center py-3 my-4">
             <span className="footer-text">This project was made with &hearts; by Tanishcq Mehta and the api was provided by <a href="https://www.coingecko.com/">CoinGecko</a></span>
             
             <div className="container p-4 pb-0">
