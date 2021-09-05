@@ -10,7 +10,8 @@
 }
 
 nav{
-  box-shadow: 0px 0px 200px 1px#ac32e4;
+  padding: 0;
+  /* box-shadow: 0px 0px 100px 1px#ac32e4; */
 }
 
 .navbar{
@@ -59,12 +60,14 @@ nav{
   justify-content: center;
   align-items: center;
   margin-bottom: 4rem;
+  background: transparent;
 }
 
 .coin-text{
   font-family: 'Major Mono Display', monospace;
   margin-bottom: 2rem;
   text-align: center;
+  background: transparent;
 }
 
 .coin-input{

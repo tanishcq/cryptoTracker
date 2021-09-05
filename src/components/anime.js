@@ -159,14 +159,14 @@ const anime = () => {
     }
 
     return (
-        <Section>
-            <Container>
-                <ColumnnLeft>
+        <Section style={{background: 'transparent'}}>
+            <Container style={{background: 'transparent'}}>
+                <ColumnnLeft style={{background: 'transparent'}}>
                     <motion.h1 initial={{opacity:0}} animate={{opacity:1}} transition={{duration: 1}}>Welcome to <span id="logo1">crypto</span><span className="logo2">Rich</span></motion.h1>
                     <motion.p variants={fadeLeft} initial='hidden' animate='visible' transition={{duration: 2}}>Let's become <span className="logo2">rich</span> together</motion.p>
                     <Button onClick={scrollToBottom} whileHover={{ scale: 1.05, backgroundColor: '#ac32e4'}} whileTap={{scale: 0.95, backgroundColor: '#4801ff', border: 'none', color: '#ffcc00'}} initial={{opacity:0}} animate={{opacity:1, transition: {duration: 2}}}>Become <span className="logo2">Rich</span></Button>
                 </ColumnnLeft>
-                <ColumnnRight>
+                <ColumnnRight style={{background: 'transparent'}}>
                     <Image src={BitcoinSvg} alt='coin' 
                     whileTap={{scale:0.9}}
                     drag={true}

@@ -1,6 +1,7 @@
 .coin-container{
     display: flex;
     justify-content: center;
+    background: transparent;
 }
 
 .coin-row{
@@ -11,6 +12,7 @@
     height: 5rem;
     border-bottom: 2px solid #4801ff;
     width: 100%;
+    background-color: transparent;
 }
 
 .coin {
@@ -18,21 +20,25 @@
     align-items: center;
     padding-right: 1.5rem;
     min-width: 18.75rem;
+    background: transparent;
 }
 
 .coin h1{
     font-size: 16px;
     width: 150px;
+    background: transparent;
 }
 
 .coin img{
     height: 1.875rem;
     width: 1.875rem;
     margin-right: 0.625rem;
+    background: transparent;
 }
 
 .coin-symbol{
     text-transform: uppercase;
+    background: transparent;
 }
 
 .coin-data{
@@ -40,23 +46,28 @@
     text-align: center;
     justify-content: space-between;
     width: 100%;
+    background: transparent;
 }
 
 .coin-price{
     width: 6.875rem;
+    background: transparent;
 }
 
 .coin-volume{
     width: 12.5rem;
+    background: transparent;
 }
 
 .coin-marketcap{
     width: 15rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: transparent;
 }
 
 .coin-percent{
     width: 5rem;
+    background: transparent;
 }
 
 .red{
