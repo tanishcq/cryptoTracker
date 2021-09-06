@@ -1,10 +1,22 @@
 import React,{useState, useEffect} from 'react';
 import axios from 'axios';
+// import { CSVLink } from 'react-csv';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Coin from './Coin';
 import Anime from './components/anime'
 import Login from './components/login'
+import {ExportCSV} from './components/exportCSV';
+
+// const headers = [
+//   {label: 'CurrencyName', key: 'id'},
+//   {label: 'Price', key: 'current_price'}
+// ]
+
+// let csvReport;
+// let dataArr;
+
+// let spinnerWrapper = document.querySelector('.spinner-wrapper');
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -14,6 +26,12 @@ function App() {
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false')
     .then(res=>{
       setCoins(res.data)
+      console.log(res.data)
+      // csvReport = {
+      //   filename: 'CryptoRichReport.csv',
+      //   headers: headers,
+      //   data: res.data
+      // }
     }).catch(error=> alert('error 404: Not Found :('))
   }, []);
   
@@ -55,11 +73,15 @@ function App() {
               price={coin.current_price}
               priceChange={coin.price_change_percentage_24h}
               volume={coin.total_volume} />
-            )
+            );
           })
         }
+        {/* <CSVLink {...csvReport}>Export to CSV</CSVLink> */}
+        {/* <div className='spinner-wrapper'>
+                <div className="spinner"></div>
+        </div> */}
       </div>
-      
+      <ExportCSV csvData={filteredCoins} fileName="cryptoRichData" />
       <div className="loginDiv">
         <Login/>
       </div>
