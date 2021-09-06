@@ -50,17 +50,17 @@ function App() {
     )
   
   const filterTop3 = (marketCap) => {
-    const updatedList1 = coins.filter(coin => coin.market_cap >= marketCap);
+    const updatedList1 = coinArr.filter(coin => coin.market_cap >= marketCap);
     setCoins(updatedList1);
   }
   
   const filterAlt = (marketCap) => {
-    const updatedList2 = coins.filter(coin => coin.market_cap <= marketCap);
+    const updatedList2 = coinArr.filter(coin => coin.market_cap <= marketCap);
     setCoins(updatedList2);
   }
   
   const filterThousand = (marketPrice) => {
-    const updatedList3 = coins.filter(coin => coin.current_price <= marketPrice);
+    const updatedList3 = coinArr.filter(coin => coin.current_price <= marketPrice);
     setCoins(updatedList3);
   }
 
