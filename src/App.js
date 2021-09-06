@@ -17,16 +17,18 @@ import {ExportCSV} from './components/exportCSV';
 // let dataArr;
 
 // let spinnerWrapper = document.querySelector('.spinner-wrapper');
-
+let coinArr;
 function App() {
   const [coins, setCoins] = useState([]);
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState('');
+  console.log(coins);
   
   useEffect(()=>{
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false')
     .then(res=>{
       setCoins(res.data)
-      console.log(res.data)
+      coinArr = res.data;
+      // console.log(res.data)
       // csvReport = {
       //   filename: 'CryptoRichReport.csv',
       //   headers: headers,
@@ -39,9 +41,28 @@ function App() {
     setSearch(e.target.value)
   }
 
-  const filteredCoins = coins.filter(coin =>
+  const returnAllCoins = () =>{
+    setCoins(coinArr);
+  }
+
+  const filteredCoins = coins.filter(coin => 
       coin.name.toLowerCase().includes(search.toLowerCase())
     )
+  
+  const filterTop3 = (marketCap) => {
+    const updatedList1 = coins.filter(coin => coin.market_cap >= marketCap);
+    setCoins(updatedList1);
+  }
+  
+  const filterAlt = (marketCap) => {
+    const updatedList2 = coins.filter(coin => coin.market_cap <= marketCap);
+    setCoins(updatedList2);
+  }
+  
+  const filterThousand = (marketPrice) => {
+    const updatedList3 = coins.filter(coin => coin.current_price <= marketPrice);
+    setCoins(updatedList3);
+  }
 
   return (
     <>
@@ -60,6 +81,12 @@ function App() {
           <form>
             <input type="text" placeholder="Search" className="coin-input" onChange={handleChange}/>
           </form>
+        </div>
+        <div className="btn-group" role="group" aria-label="Basic example">
+          <button type="button" className="btn btn-primary" onClick={()=>returnAllCoins(coinArr)}>All Coins</button>
+          <button type="button" className="btn btn-primary" onClick={()=>filterTop3(6078042634579)}>Top 3 Coins</button>
+          <button type="button" className="btn btn-primary" onClick={()=>filterAlt(6078042634579)}>Alt Coins</button>
+          <button type="button" className="btn btn-primary" onClick={()=>filterThousand(1000)}>Below &#x20B9;1000</button>
         </div>
         {
           filteredCoins.map(coin => {
