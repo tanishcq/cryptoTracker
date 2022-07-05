@@ -15,8 +15,8 @@ export const ExportCSV = ({csvData, fileName}) => {
     }
 
     return (
-        <div style={{height: '3rem', textAlign: 'center'}}>
-            <button style={{borderRadius: '5px',height: '2rem',width: '8rem' ,textAlign: 'center'}}  onClick={(e) => exportToCSV(csvData,fileName)}>Export Data</button>
+        <div style={{height: '8rem', textAlign: 'center'}}>
+            <button style={{borderRadius: '7px',height: '3rem',width: '8rem', textAlign: 'center', backgroundColor: 'white', marginTop: '50px', color: 'black'}}  onClick={(e) => exportToCSV(csvData,fileName)}>Export Data</button>
         </div>
     )
 }
