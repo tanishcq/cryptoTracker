@@ -21,12 +21,11 @@ let coinArr;
 function App() {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState('');
-  console.log(coins);
   
   useEffect(()=>{
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false')
     .then(res=>{
-      setCoins(res.data)
+      setCoins(res.data);
       coinArr = res.data;
       // console.log(res.data)
       // csvReport = {
@@ -49,9 +48,12 @@ function App() {
       coin.name.toLowerCase().includes(search.toLowerCase())
     )
   
-  const filterTop3 = (marketCap) => {
-    const updatedList1 = coinArr.filter(coin => coin.market_cap >= marketCap);
-    setCoins(updatedList1);
+  const filterTop3 = () => {
+    const updatedList1 = coinArr.sort((a,b) => {
+      if(a.market_cap > b.marker_cap) return -1;
+      else return 1;
+    }); 
+    setCoins(updatedList1.slice(0, 3));
   }
   
   const filterAlt = (marketCap) => {
@@ -84,7 +86,7 @@ function App() {
         </div>
         <div className="btn-group" role="group" aria-label="Basic example">
           <button type="button" className="btn btn-primary" onClick={()=>returnAllCoins(coinArr)}>All Coins</button>
-          <button type="button" className="btn btn-primary" onClick={()=>filterTop3(6078042634579)}>Top 3 Coins</button>
+          <button type="button" className="btn btn-primary" onClick={()=>filterTop3()}>Top 3 Coins</button>
           <button type="button" className="btn btn-primary" onClick={()=>filterAlt(6078042634579)}>Alt Coins</button>
           <button type="button" className="btn btn-primary" onClick={()=>filterThousand(1000)}>Below &#x20B9;1000</button>
         </div>
